@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap-4.6.0-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     Jqeuey autocmoplete CSS -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    {% if title %}
+        <title>Python Tutorials - {{ title }}</title>
+    {% else %}
+        <title>Python Tutorials</title>
+    {% endif %}
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'pythontutorials/pages.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pythontutorials/about.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pythontutorials/sidenav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pythontutorials/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pythontutorials/base.css' %}">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body style="background:  #101238 ;" >
+
+
+
+  <header class="site-header">
+      <nav class="navbar navbar-expand-md  navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          {% if user.is_authenticated %}
+
+          <a href="{% url 'python-main' %}" class="navbar-brand">
+              <!-- Logo Image -->
+              <img src="{% static '/pythontutorials/logo.png' %}" width="50" height="50" alt="" class="d-inline-block align-middle mr-2">
+                <!-- Logo Text -->
+              <span class="text-uppercase font-weight-bold">Python</span>
+          </a>
+          {% else %}
+          <a href="{% url 'login' %}" class="navbar-brand">
+              <!-- Logo Image -->
+              <img src="{% static '/pythontutorials/logo.png' %}" width="50" height="50" alt="" class="d-inline-block align-middle mr-2">
+                <!-- Logo Text -->
+              <span class="text-uppercase font-weight-bold">Python</span>
+          </a>
+          {% endif %}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              {% if user.is_authenticated %}
+              <a class="nav-item nav-link" href="{% url 'python-main' %}"><b>HOME</b></a>
+
+              {% else %}
+
+              {% endif %}
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'python-main' %}">Start</a>
+            <a class="nav-item nav-link" href="{% url 'python-blog' %}">Comments</a>
+
+
+
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+          Downloads
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="https://www.python.org/downloads/">Python</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.anaconda.com/products/individual#windows">Anaconda</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="https://www.jetbrains.com/pycharm/download/?gclid=Cj0KCQjwwLKFBhDPARIsAPzPi-KGs2e6wM-iMn6DzN_oYnw9zQ3sb3h1WdGC8K8TrKuAK8FJ4MxIm8kaAnjNEALw_wcB#section=windows">PyCharm</a>
+
+
+          </div>
+          </li>
+
+
+            <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+          Account
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'python-about' %}">About</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+
+          </div>
+        </li>
+
+
+
+
+
+
+              {% else %}
+              <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+              <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+
+              {% endif %}
+            </div>
+          </div>
+
+        </div>
+      </nav>
+
+
+
+    </header>
+<br><br><br>
+
+
+
+
+    <main role="main" class="container">
+
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+  </main>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script>
+              /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+      //We start indexing at one because CSRF_token is considered and input field
+       */
+      //Query All input fields
+      var form_fields = document.getElementsByTagName('input')
+
+      for (var field in form_fields){
+        form_fields[field].className += ' form-control'
+
+      }
+    </script>
+
+    {% if user.is_authenticated %}
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+              <a href="https://www.instagram.com/maryanoo4/"><i class="icon ion-social-instagram"></i></a>
+              <a href="https://twitter.com/marianodagaang"><i class="icon ion-social-twitter"></i></a>
+              <a href="https://www.facebook.com/reinhardvon11/"><i class="icon ion-social-facebook">
+                </i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="{% url 'python-main' %}">Home</a></li>
+                <li class="list-inline-item"><a href="{% url 'python-services' %}">Services</a></li>
+                <li class="list-inline-item"><a href="{% url 'python-about' %}">About</a></li>
+                <li class="list-inline-item"><a href="{% url 'python-terms' %}">Terms</a></li>
+                <li class="list-inline-item"><a href="{% url 'python-privacypolicy' %}">Privacy Policy</a></li>
+            </ul>
+
+            <p class="copyright"><span>©  </span><span class="copyright-year">2021</span><span> </span><span>CPE project</span><span> - </span><span>All Rights Reserved.</span></p>
+              </div>
+        </footer>
+    </div>
+
+    {% else %}
+
+    {% endif %}
+
+
+</body>
+</html>

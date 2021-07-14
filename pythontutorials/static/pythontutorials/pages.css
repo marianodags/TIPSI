@@ -1,0 +1,25 @@
+
+#button{
+  margin-left: 712px;
+}
+
+.main h1{
+  text-align: center;
+  color:white;
+}
+.main h3{
+  color:white;
+}
+p{
+    color:white;
+    text-align: justify;
+}
+li{
+    color:white;
+}
+.main .row{
+  borderbackground : black;border: 5px outset  grey;
+  background-color: black;
+  color :white;
+
+}
