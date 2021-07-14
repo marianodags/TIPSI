@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55ac01ef-54c9-4ef0-b765-23ec3b62e81e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPEproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CPEproject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,9 +68,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="445" y="171" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1626251699826">
+    <state x="445" y="171" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1626253537507">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="445" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1626251699826" />
+    <state x="445" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1626253537507" />
   </component>
 </project>
