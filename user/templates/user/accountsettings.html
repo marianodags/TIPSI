@@ -1,0 +1,52 @@
+{% extends "pythontutorials/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br><br><br><br>
+<style media="screen">
+  .user_card {
+
+    margin-top: auto;
+    margin-bottom: auto;
+
+    background-color: rgba(0,0,0,0.5) !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+  }
+  #center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="user_card">
+
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group" style='color:white;'>
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              <img  id="center" class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-primary" type="submit">Update</button>
+          </div>
+      </form>
+    </div>
+    </div>
+    <br><br><br>
+    </div>
+    <br><br><br>
+{% endblock content %}
