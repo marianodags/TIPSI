@@ -1,0 +1,1 @@
+web: gunicorn CPEproject.wsgi --log-file -
